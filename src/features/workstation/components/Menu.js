@@ -4,6 +4,7 @@ import "@szhsin/react-menu/dist/index.css";
 import { Menu as IconoirMenu } from 'iconoir-react';
 
 export default function Menu({ instruments, sequencers, fx }) {
+
   const menuButton = <MenuButton isOpen={true}>
     <IconoirMenu />
   </MenuButton>;
@@ -18,7 +19,9 @@ export default function Menu({ instruments, sequencers, fx }) {
           <MenuItem>About</MenuItem>
         </SubMenu>
         <SubMenu label="Edit">
+          <MenuItem>Redo</MenuItem>
           <MenuItem>Undo</MenuItem>
+          <MenuItem>Undo History</MenuItem>
         </SubMenu>
         <SubMenu label="View">
           <MenuItem>Router View</MenuItem>
@@ -26,17 +29,25 @@ export default function Menu({ instruments, sequencers, fx }) {
         </SubMenu>
         <SubMenu label="Add">
           <SubMenu label="Instruments">
-            <MenuItem>Bass Synth</MenuItem>
-            <MenuItem>Poly Synth</MenuItem>
-            <MenuItem>Bird Synth</MenuItem>
+            { 
+              Object.keys(instruments).map(instrument => (
+                <MenuItem>{instrument}</MenuItem>
+              ))
+            }
           </SubMenu>
           <SubMenu label="Sequencers">
-            <MenuItem>Linear</MenuItem>
-            <MenuItem>Euclidian</MenuItem>
+            { 
+              Object.keys(sequencers).map(sequencer => (
+                <MenuItem>{sequencer}</MenuItem>
+              ))
+            }
           </SubMenu>
           <SubMenu label="FX">
-            <MenuItem>BitCrusher</MenuItem>
-            <MenuItem>Tape Delay</MenuItem>
+            { 
+              Object.keys(fx).map(effect => (
+                <MenuItem>{effect}</MenuItem>
+              ))
+            }
           </SubMenu>
         </SubMenu>
       </ReactMenu>
