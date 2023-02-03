@@ -1,12 +1,9 @@
 import { React } from 'react';
 
-import MainMenu from './MainMenu';
-import * as sequencers from '../sequencers';
-import * as instruments from '../instruments';
-import * as fx from '../fx';
+import Menu from './components/Menu';
 
 export default function Workstation() {
   return <div>
-    <MainMenu />
+    <Menu />
   </div>;
 }

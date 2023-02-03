@@ -1,21 +1,28 @@
-import { Menu, MenuItem, MenuButton, SubMenu } from '@szhsin/react-menu';
+import { Menu as ReactMenu, MenuItem, MenuButton, SubMenu } from '@szhsin/react-menu';
 import "@szhsin/react-menu/dist/index.css";
 
-import { Iconoir, Menu as IconoirMenu } from 'iconoir-react';
+import { Menu as IconoirMenu } from 'iconoir-react';
 
-export default function WorkstationMenu({ instruments, sequencers, fx }) {
+export default function Menu({ instruments, sequencers, fx }) {
   const menuButton = <MenuButton isOpen={true}>
-    <IconoirMenu color="red" />
+    <IconoirMenu />
   </MenuButton>;
 
   return (
     <>
-      <Menu menuButton={menuButton}>
+      <ReactMenu menuButton={menuButton}>
         <SubMenu label="File">
           <MenuItem>Open</MenuItem>
           <MenuItem>Save</MenuItem>
           <MenuItem>Save As</MenuItem>
           <MenuItem>About</MenuItem>
+        </SubMenu>
+        <SubMenu label="Edit">
+          <MenuItem>Undo</MenuItem>
+        </SubMenu>
+        <SubMenu label="View">
+          <MenuItem>Router View</MenuItem>
+          <MenuItem>Device View</MenuItem>
         </SubMenu>
         <SubMenu label="Add">
           <SubMenu label="Instruments">
@@ -32,7 +39,7 @@ export default function WorkstationMenu({ instruments, sequencers, fx }) {
             <MenuItem>Tape Delay</MenuItem>
           </SubMenu>
         </SubMenu>
-      </Menu>
+      </ReactMenu>
     </>
   )
 }
