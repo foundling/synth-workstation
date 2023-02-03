@@ -6,15 +6,10 @@ import * as sequencers from './../sequencers';
 import * as fx from './../fx';
 
 import { Navigate, Routes, Route } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
 
 import { WorkstationView, DeviceView, SettingsView } from './views';
 
 export default function Workstation() {
-
-  const params = useParams();
-
-  console.log(params);
 
   return <div>
     <Menu

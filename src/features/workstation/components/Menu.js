@@ -30,22 +30,22 @@ export default function Menu({ instruments, sequencers, fx }) {
         <SubMenu label="Add">
           <SubMenu label="Instruments">
             { 
-              Object.keys(instruments).map(instrument => (
-                <MenuItem>{instrument}</MenuItem>
+              Object.entries(instruments).map(([instrumentName, instrument]) => (
+                <MenuItem key={instrumentName}>{instrument}</MenuItem>
               ))
             }
           </SubMenu>
           <SubMenu label="Sequencers">
             { 
-              Object.keys(sequencers).map(sequencer => (
-                <MenuItem>{sequencer}</MenuItem>
+              Object.entries(sequencers).map(([sequencerName, sequencer]) => (
+                <MenuItem key={sequencerName}>{sequencer}</MenuItem>
               ))
             }
           </SubMenu>
           <SubMenu label="FX">
             { 
-              Object.keys(fx).map(effect => (
-                <MenuItem>{effect}</MenuItem>
+              Object.entries(fx).map(([effectName, effect]) => (
+                <MenuItem key={effectName}>{effect}</MenuItem>
               ))
             }
           </SubMenu>
